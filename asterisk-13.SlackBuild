@@ -14,7 +14,8 @@
 #
 # All rights reserved.
 
-PRGNAM=asterisk
+PRGNAM=asterisk-13
+ARCHIVE_NAME=asterisk
 VERSION=${VERSION:-13.5.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
@@ -56,8 +57,8 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
-tar zxvf $CWD/$PRGNAM-$VERSION.tar.gz
-cd $PRGNAM-$VERSION
+tar zxvf $CWD/$ARCHIVE_NAME-$VERSION.tar.gz
+cd $ARCHIVE_NAME-$VERSION
 
 chown -R root:root .
 chmod -R u+w,go+r-w,a-s .
@@ -89,7 +90,7 @@ if [ -z "$SAMPLE_CONF" ]; then
   done
 fi
 
-install -D -m 0644 $TMP/$PRGNAM-$VERSION/contrib/init.d/rc.slackware.asterisk $PKG/etc/rc.d/rc.asterisk.new
+install -D -m 0644 $TMP/$ARCHIVE_NAME-$VERSION/contrib/init.d/rc.slackware.asterisk $PKG/etc/rc.d/rc.asterisk.new
 
 # Strip some libraries and binaries
 ( 
@@ -102,7 +103,7 @@ install -D -m 0644 $TMP/$PRGNAM-$VERSION/contrib/init.d/rc.slackware.asterisk $P
 gzip -9 $PKG/usr/man/man?/*.?
 
 ( 
-  cd $TMP/$PRGNAM-$VERSION
+  cd $TMP/$ARCHIVE_NAME-$VERSION
   mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
   cp -a BUGS CHANGES COPYING CREDITS ChangeLog LICENSE README* UPGRADE*.txt\
     Zaptel-to-DAHDI.txt asterisk-13.5.0-summary.txt doc/ \

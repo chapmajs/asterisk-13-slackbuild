@@ -1,4 +1,4 @@
-PRGNAM="asterisk"
+PRGNAM="asterisk-13"
 VERSION="13.5.0"
 HOMEPAGE="http://www.asterisk.org/"
 DOWNLOAD="http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-13.5.0.tar.gz"
