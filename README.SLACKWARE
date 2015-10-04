@@ -1,0 +1,15 @@
+README.SLACKWARE for asterisk-13
+
+To start Asterisk at boot, add the following to /etc/rc.d/rc.local:
+
+  if [ -x /etc/rc.d/rc.asterisk ];  then
+    /etc/rc.d/rc.asterisk start
+  fi
+
+This goes in /etc/rc.d/rc.local_shutdown:
+
+  if [ -x /etc/rc.d/rc.asterisk ];  then
+    /etc/rc.d/rc.asterisk stop
+  fi
+
+If you are using DAHDI hardware, make sure to start it before Asterisk.

@@ -1,0 +1,13 @@
+Asterisk is a free and open source framework for building communications
+applications and is sponsored by Digium.
+
+If you require support for Digium et al. hardware telephony boards, install
+the required DAHDI software before compiling Asterisk. `dahdi-complete` is 
+available as a SlackBuild.
+
+Asterisk provides sample configuration files, which are built by default. They
+will be installed as .new files if existing configuration files are present. To
+suppress building of sample configurations, set SAMPLE_CONF to any non-empty
+value:
+
+SAMPLE_CONF=no ./asterisk-13.SlackBuild
